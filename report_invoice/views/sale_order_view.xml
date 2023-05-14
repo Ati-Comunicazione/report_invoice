@@ -1,0 +1,42 @@
+<odoo>
+  <data>
+
+    <!-- Aggiunta del campo che mostri il campo Delivery -->
+    <record id="view_sale_order_form_inherit" model="ir.ui.view">
+      <field name="name">sale.order.form.inherit</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form"/>
+      <field name="arch" type="xml">
+        <field name="partner_id" position="after">
+          <field name="delivery_contacts" widget="many2many_tags" options="{'no_create': True}"/>
+        </field>
+      </field>
+    </record>
+
+    <!-- Aggiunta del campo che mi mostri l'Aspetto dei prodotti -->
+    <record id="view_aspect_sale_order_form_inherit" model="ir.ui.view">
+      <field name="name">sale.order.form.inherit</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='sale_order_template_id']" position="after">
+          <field name="aspetto"/>
+        </xpath>
+      </field>
+    </record>
+
+
+  <!-- AGGIUNTA CAMPO DI VISUALIZZAZIONE PER L'ASPETTO DEL PRODOTTO E PER IL DELIVERY-->
+    <record id="view_account_move_form_inherit" model="ir.ui.view">
+      <field name="name">account.move.form.inherit</field>
+      <field name="model">account.move</field>
+      <field name="inherit_id" ref="account.view_move_form"/>
+      <field name="arch" type="xml">
+        <field name="partner_id" position="after">
+          <field name="sale_order_id"/>
+          <field name="sale_order_delivery_id"/>
+        </field>
+      </field>
+    </record>
+  </data>
+</odoo>

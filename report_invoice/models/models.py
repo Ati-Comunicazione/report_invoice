@@ -15,7 +15,7 @@ class SaleOrder(models.Model):
         ('cartone', 'Cartone'),
         ('cartone_bancale', 'Cartone / Bancale'),
         ('sfusi', 'Sfusi')
-    ], string='Aspetto', required=True)
+    ], string='Aspetto')
 
     #Salvataggio dei dati inseriti durante il preventivo nella funzione _prepare_invoice() perchè essa contiene tutti i dati che vengono salvati nel Preventivo 
     def _prepare_invoice(self):

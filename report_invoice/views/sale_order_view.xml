@@ -36,6 +36,7 @@
         <field name="partner_id" position="after">
           <field name="sale_order_id"/>
           <field name="sale_order_delivery_id"/>
+          <field name="sale_order_colli"/>
         </field>
       </field>
     </record>

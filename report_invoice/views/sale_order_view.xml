@@ -21,6 +21,7 @@
       <field name="arch" type="xml">
         <xpath expr="//field[@name='sale_order_template_id']" position="after">
           <field name="aspetto"/>
+          <field name="colli"/>
         </xpath>
       </field>
     </record>

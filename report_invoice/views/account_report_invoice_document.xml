@@ -131,7 +131,9 @@
                                 <span t-field="o.sale_order_colli" class="text-aspect"/>
                             </td>
                             <!-- Dinamico come campo Prenderlo dai PrODOTTI il peso -->
-                            <td class="border-table td-width text-center"></td>
+                            <td class="border-table td-width text-center">
+                                <span t-field="o.sale_order_peso" class="text-aspect"/>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

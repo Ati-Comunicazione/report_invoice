@@ -18,10 +18,12 @@ class SaleOrder(models.Model):
     ], string='Aspetto')
 
     colli = fields.Char(string="Colli")
+    sale_weight = fields.Char(string="Peso")
     #Salvataggio dei dati inseriti durante il preventivo nella funzione _prepare_invoice() perchè essa contiene tutti i dati che vengono salvati nel Preventivo 
     def _prepare_invoice(self):
         invoice_vals = super(SaleOrder, self)._prepare_invoice()
         invoice_vals['sale_order_id'] = self.aspetto
         invoice_vals['sale_order_colli'] = self.colli
+        invoice_vals['sale_order_peso'] = self.sale_weight
         invoice_vals['sale_order_delivery_id'] = self.delivery_contacts.name_get()[0][1] if self.delivery_contacts else False
         return invoice_vals
